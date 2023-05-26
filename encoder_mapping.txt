@@ -1,0 +1,140 @@
+[{'col': 'cap-shape', 'mapping': x      1
+f      2
+k      3
+b      4
+s      5
+c      6
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'cap-surface', 'mapping': y      1
+f      2
+s      3
+g      4
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'cap-color', 'mapping': y       1
+g       2
+w       3
+n       4
+e       5
+b       6
+p       7
+c       8
+u       9
+r      10
+NaN    -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'bruises', 'mapping': f      1
+t      2
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'odor', 'mapping': f      1
+n      2
+s      3
+c      4
+y      5
+p      6
+a      7
+l      8
+m      9
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'gill-attachment', 'mapping': f      1
+a      2
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'gill-spacing', 'mapping': c      1
+w      2
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'gill-size', 'mapping': b      1
+n      2
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'gill-color', 'mapping': p       1
+h       2
+b       3
+n       4
+g       5
+u       6
+o       7
+y       8
+w       9
+k      10
+e      11
+r      12
+NaN    -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'stalk-shape', 'mapping': e      1
+t      2
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'stalk-root', 'mapping': b      1
+e      2
+?      3
+r      4
+c      5
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'stalk-surface-above-ring', 'mapping': k      1
+s      2
+f      3
+y      4
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'stalk-surface-below-ring', 'mapping': k      1
+s      2
+f      3
+y      4
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'stalk-color-above-ring', 'mapping': p      1
+g      2
+w      3
+o      4
+b      5
+e      6
+n      7
+c      8
+y      9
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'stalk-color-below-ring', 'mapping': p      1
+w      2
+g      3
+o      4
+n      5
+y      6
+b      7
+e      8
+c      9
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'veil-type', 'mapping': p      1
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'veil-color', 'mapping': w      1
+n      2
+o      3
+y      4
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'ring-number', 'mapping': o      1
+t      2
+n      3
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'ring-type', 'mapping': l      1
+p      2
+e      3
+f      4
+n      5
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'spore-print-color', 'mapping': h      1
+n      2
+k      3
+w      4
+y      5
+b      6
+r      7
+u      8
+o      9
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'population', 'mapping': y      1
+v      2
+a      3
+s      4
+c      5
+n      6
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}, {'col': 'habitat', 'mapping': g      1
+d      2
+l      3
+p      4
+w      5
+u      6
+m      7
+NaN   -2
+dtype: int64, 'data_type': dtype('O')}]
