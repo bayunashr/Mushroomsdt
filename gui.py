@@ -2,6 +2,10 @@ import customtkinter
 import mushroomsdt as mdt
 import numpy as np
 import pandas as pd
+import os
+import webbrowser
+
+from PIL import Image
 
 # App Init
 
@@ -543,5 +547,36 @@ def ButtonPredict_Pressed():
 ButtonPredict = customtkinter.CTkButton(master=tab.tab("Klasifikasi"), text="Identifikasi", command=ButtonPredict_Pressed, width=255, height=80)
 
 ButtonPredict.grid(row=6, rowspan=7, column=4, columnspan=5, padx=XWidgetPadding, pady=YWidgetPadding)
+
+# How To
+
+def ButtonMushroomAnatomy_Pressed():
+    try:
+        os.startfile("mushroomanatomybybuggbuzz.jpg")
+    except:
+        print("Tidak dapat membuka image viewer")
+
+ButtonMushroomAnatomy = customtkinter.CTkButton(master=tab.tab("Panduan"), text="Buka Gambar Anatomi Jamur", command=ButtonMushroomAnatomy_Pressed)
+
+TextHowTo = customtkinter.CTkTextbox(master=tab.tab("Panduan"), width=965, height=350)
+
+TextHowTo.insert("0.0", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tincidunt tellus. Aliquam faucibus libero dapibus dui sodales, posuere pharetra ligula ultricies. Ut eget convallis mauris. Etiam vitae diam placerat, ornare nibh eu, semper elit. Donec venenatis congue elit, sed eleifend mi dignissim eu. Maecenas finibus lacus magna, sed facilisis risus elementum quis. In in ipsum ut diam vehicula luctus. Maecenas nisi lacus, efficitur at metus a, congue accumsan dui.")
+TextHowTo.configure(state="disabled")
+TextHowTo.pack(padx=XWidgetPadding, pady=YWidgetPadding)
+ButtonMushroomAnatomy.pack(padx=XWidgetPadding, pady=YWidgetPadding)
+
+# About
+
+def ButtonDataset_Pressed():
+    webbrowser.open("https://www.kaggle.com/datasets/uciml/mushroom-classification")
+
+ButtonDataset = customtkinter.CTkButton(master=tab.tab("Tentang"), text="Buka Sumber Dataset", command=ButtonDataset_Pressed)
+
+TextAbout = customtkinter.CTkTextbox(master=tab.tab("Tentang"), width=965, height=350)
+
+TextAbout.insert("0.0", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tincidunt tellus. Aliquam faucibus libero dapibus dui sodales, posuere pharetra ligula ultricies. Ut eget convallis mauris. Etiam vitae diam placerat, ornare nibh eu, semper elit. Donec venenatis congue elit, sed eleifend mi dignissim eu. Maecenas finibus lacus magna, sed facilisis risus elementum quis. In in ipsum ut diam vehicula luctus. Maecenas nisi lacus, efficitur at metus a, congue accumsan dui.")
+TextAbout.configure(state="disabled")
+TextAbout.pack(padx=XWidgetPadding, pady=YWidgetPadding)
+ButtonDataset.pack(padx=XWidgetPadding, pady=YWidgetPadding)
 
 app.mainloop()
