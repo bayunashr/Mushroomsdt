@@ -6,25 +6,31 @@ import pandas as pd
 # App Init
 
 user_entry = np.zeros((1,22))
-customtkinter.set_appearance_mode("system")
+customtkinter.set_appearance_mode("dark")
 
 # Window Init
 
 app = customtkinter.CTk()
 app.title("Klasifikasi Jamur")
-app.geometry("1280x720")
+app.resizable(width=False, height=False)
 
-XWidgetPadding = 10
-YWidgetPadding = 10
+XWidgetPadding = 12
+YWidgetPadding = 12
+ScreenWidth = app.winfo_screenwidth()
+ScreenHeight = app.winfo_screenheight()
+XCenterPos = (ScreenWidth // 2) - (965 // 2)
+YCenterPos = (ScreenHeight // 2) - (500 // 2)
+
+app.geometry(f"{965}x{500}+{XCenterPos}+{YCenterPos}")
 
 # Tab Menu
 
-tab = customtkinter.CTkTabview(master=app, width=1920, height=1080)
+tab = customtkinter.CTkTabview(master=app, width=965, height=500)
 tab.pack(padx=XWidgetPadding, pady=YWidgetPadding)
 
 tab.add("Klasifikasi")
-tab.add("Cara Menggunakan")
-tab.add("Tentang Dataset")
+tab.add("Panduan")
+tab.add("Tentang")
 tab.set("Klasifikasi")
 
 # Cap Shape
@@ -221,8 +227,8 @@ ComboGillColor = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), values
                                      command=ComboGillColor_Callback)
 ComboGillColor.set("Hijau")
 
-LabelGillColor.grid(row=8, column=0, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboGillColor.grid(row=8, column=1, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelGillColor.grid(row=0, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboGillColor.grid(row=0, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
 
 
 # Stalk Shape
@@ -237,8 +243,8 @@ ComboStalkShape = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), value
                                      command=ComboStalkShape_Callback)
 ComboStalkShape.set("Membesar")
 
-LabelStalkShape.grid(row=0, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboStalkShape.grid(row=0, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelStalkShape.grid(row=1, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboStalkShape.grid(row=1, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Stalk Root
 def ComboStalkRoot_Callback(choice):
@@ -258,8 +264,8 @@ ComboStalkRoot = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), values
                                      command=ComboStalkRoot_Callback)
 ComboStalkRoot.set("Menjulur")
 
-LabelStalkRoot.grid(row=1, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboStalkRoot.grid(row=1, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelStalkRoot.grid(row=2, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboStalkRoot.grid(row=2, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Stalk Surface Above Ring
 def ComboStalkSurfaceAboveRing_Callback(choice):
@@ -277,8 +283,8 @@ ComboStalkSurfaceAboveRing = customtkinter.CTkComboBox(master=tab.tab("Klasifika
                                      command=ComboStalkSurfaceAboveRing_Callback)
 ComboStalkSurfaceAboveRing.set("Halus Berbulu")
 
-LabelStalkSurfaceAboveRing.grid(row=2, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboStalkSurfaceAboveRing.grid(row=2, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelStalkSurfaceAboveRing.grid(row=3, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboStalkSurfaceAboveRing.grid(row=3, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Stalk Surface Below Ring
 def ComboStalkSurfaceBelowRing_Callback(choice):
@@ -296,8 +302,8 @@ ComboStalkSurfaceBelowRing = customtkinter.CTkComboBox(master=tab.tab("Klasifika
                                      command=ComboStalkSurfaceBelowRing_Callback)
 ComboStalkSurfaceBelowRing.set("Bersisik")
 
-LabelStalkSurfaceBelowRing.grid(row=3, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboStalkSurfaceBelowRing.grid(row=3, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelStalkSurfaceBelowRing.grid(row=4, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboStalkSurfaceBelowRing.grid(row=4, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Stalk Color Above Ring
 def ComboStalkColorAboveRing_Callback(choice):
@@ -325,8 +331,8 @@ ComboStalkColorAboveRing = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi
                                      command=ComboStalkColorAboveRing_Callback)
 ComboStalkColorAboveRing.set("Putih")
 
-LabelStalkColorAboveRing.grid(row=4, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboStalkColorAboveRing.grid(row=4, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelStalkColorAboveRing.grid(row=5, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboStalkColorAboveRing.grid(row=5, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Stalk Color Below Ring
 def ComboStalkColorBelowRing_Callback(choice):
@@ -354,8 +360,8 @@ ComboStalkColorBelowRing = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi
                                      command=ComboStalkColorBelowRing_Callback)
 ComboStalkColorBelowRing.set("Merah Muda")
 
-LabelStalkColorBelowRing.grid(row=5, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboStalkColorBelowRing.grid(row=5, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelStalkColorBelowRing.grid(row=6, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboStalkColorBelowRing.grid(row=6, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Veil Type
 def ComboVeilType_Callback(choice):
@@ -367,8 +373,8 @@ ComboVeilType = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), values=
                                      command=ComboVeilType_Callback)
 ComboVeilType.set("Sebagian")
 
-LabelVeilType.grid(row=6, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboVeilType.grid(row=6, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelVeilType.grid(row=7, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboVeilType.grid(row=7, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Veil Color
 def ComboVeilColor_Callback(choice):
@@ -386,8 +392,8 @@ ComboVeilColor = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), values
                                      command=ComboVeilColor_Callback)
 ComboVeilColor.set("Kuning")
 
-LabelVeilColor.grid(row=7, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboVeilColor.grid(row=7, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelVeilColor.grid(row=0, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboVeilColor.grid(row=0, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Ring Number
 def ComboRingNumber_Callback(choice):
@@ -403,8 +409,8 @@ ComboRingNumber = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), value
                                      command=ComboRingNumber_Callback)
 ComboRingNumber.set("Tidak Ada")
 
-LabelRingNumber.grid(row=8, column=2, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboRingNumber.grid(row=8, column=3, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelRingNumber.grid(row=1, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboRingNumber.grid(row=1, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Ring Type
 def ComboRingType_Callback(choice):
@@ -424,8 +430,8 @@ ComboRingType = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), values=
                                      command=ComboRingType_Callback)
 ComboRingType.set("Menggantung")
 
-LabelRingType.grid(row=0, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboRingType.grid(row=0, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelRingType.grid(row=2, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboRingType.grid(row=2, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Spore Print Color
 def ComboSporePrintColor_Callback(choice):
@@ -453,8 +459,8 @@ ComboSporePrintColor = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), 
                                      command=ComboSporePrintColor_Callback)
 ComboSporePrintColor.set("Coklat Tua")
 
-LabelSporePrintColor.grid(row=1, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboSporePrintColor.grid(row=1, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelSporePrintColor.grid(row=3, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboSporePrintColor.grid(row=3, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Population
 def ComboPopulation_Callback(choice):
@@ -476,8 +482,8 @@ ComboPopulation = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), value
                                      command=ComboPopulation_Callback)
 ComboPopulation.set("Berkelompok Kecil")
 
-LabelPopulation.grid(row=2, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboPopulation.grid(row=2, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelPopulation.grid(row=4, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboPopulation.grid(row=4, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Habitat
 def ComboHabitat_Callback(choice):
@@ -501,27 +507,41 @@ ComboHabitat = customtkinter.CTkComboBox(master=tab.tab("Klasifikasi"), values=[
                                      command=ComboHabitat_Callback)
 ComboHabitat.set("Kayu-Kayuan")
 
-LabelHabitat.grid(row=3, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
-ComboHabitat.grid(row=3, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
+LabelHabitat.grid(row=5, column=4, padx=XWidgetPadding, pady=YWidgetPadding)
+ComboHabitat.grid(row=5, column=5, padx=XWidgetPadding, pady=YWidgetPadding)
 
 # Predict Button
 def ButtonPredict_Pressed():
     df_user_entry = pd.DataFrame(user_entry, columns=['cap-shape', 'cap-surface', 'cap-color', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat'])
     user_pred = mdt.clf_gini.predict(df_user_entry)
     if user_pred == "p":
-        user_pred = "Beracun"
+        user_pred = "Jamur Terindikasi Beracun"
     elif user_pred == "e":
-        user_pred = "Dapat Dimakan"
+        user_pred = "Jamur Terindikasi Dapat Dimakan"
 
-    TopResult = customtkinter.CTkToplevel(master=tab.tab("Klasifikasi"))
+    # Predict Dialog
+
+    TopResult = customtkinter.CTkToplevel(app)
     TopResult.title("Hasil Identifikasi")
-    TopResult.geometry("200x200")
+    TopResultWidth = TopResult.winfo_screenwidth()
+    TopResultHeight = TopResult.winfo_screenheight()
+    TopResultXCenterPos = (TopResultWidth // 2) - (300 // 2)
+    TopResultYCenterPos = (TopResultHeight // 2) - (125 // 2)
+    TopResult.geometry(f"{300}x{125}+{TopResultXCenterPos}+{TopResultYCenterPos}")
+    TopResult.resizable(width=False, height=False)
+    TopResult.grab_set()
 
     LabelResult = customtkinter.CTkLabel(master=TopResult, text=user_pred)
-    LabelResult.pack()
+    LabelResult.pack(padx=XWidgetPadding, pady=YWidgetPadding)
 
-ButtonPredict = customtkinter.CTkButton(master=tab.tab("Klasifikasi"), text="Identifikasi", command=ButtonPredict_Pressed, width=250)
+    def ButtonBackMain_Pressed():
+        TopResult.destroy()
 
-ButtonPredict.grid(row=4, column=4, columnspan=5, padx=XWidgetPadding, pady=YWidgetPadding)
+    ButtonBackMain = customtkinter.CTkButton(master=TopResult, text="Tutup", command=ButtonBackMain_Pressed)
+    ButtonBackMain.pack(padx=XWidgetPadding, pady=YWidgetPadding)
+
+ButtonPredict = customtkinter.CTkButton(master=tab.tab("Klasifikasi"), text="Identifikasi", command=ButtonPredict_Pressed, width=255, height=80)
+
+ButtonPredict.grid(row=6, rowspan=7, column=4, columnspan=5, padx=XWidgetPadding, pady=YWidgetPadding)
 
 app.mainloop()

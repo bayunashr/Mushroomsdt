@@ -1,16 +1,9 @@
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import category_encoders as ce
-import tkinter as tk
 import warnings
 
 from sklearn.model_selection import train_test_split
-from sklearn import tree
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
-from array import array
 
 warnings.filterwarnings('ignore')
 
