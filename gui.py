@@ -5,8 +5,6 @@ import pandas as pd
 import os
 import webbrowser
 
-from PIL import Image
-
 # App Init
 
 user_entry = np.zeros((1,22))
@@ -17,6 +15,7 @@ customtkinter.set_appearance_mode("dark")
 app = customtkinter.CTk()
 app.title("Klasifikasi Jamur")
 app.resizable(width=False, height=False)
+app.iconbitmap("mushroomsdt.ico")
 
 XWidgetPadding = 12
 YWidgetPadding = 12
@@ -526,7 +525,7 @@ def ButtonPredict_Pressed():
     # Predict Dialog
 
     TopResult = customtkinter.CTkToplevel(app)
-    TopResult.title("Hasil Identifikasi")
+    TopResult.title("Hasil Klasifikasi")
     TopResultWidth = TopResult.winfo_screenwidth()
     TopResultHeight = TopResult.winfo_screenheight()
     TopResultXCenterPos = (TopResultWidth // 2) - (300 // 2)
@@ -544,7 +543,7 @@ def ButtonPredict_Pressed():
     ButtonBackMain = customtkinter.CTkButton(master=TopResult, text="Tutup", command=ButtonBackMain_Pressed)
     ButtonBackMain.pack(padx=XWidgetPadding, pady=YWidgetPadding)
 
-ButtonPredict = customtkinter.CTkButton(master=tab.tab("Klasifikasi"), text="Identifikasi", command=ButtonPredict_Pressed, width=255, height=80)
+ButtonPredict = customtkinter.CTkButton(master=tab.tab("Klasifikasi"), text="Klasifikasi", command=ButtonPredict_Pressed, width=255, height=80)
 
 ButtonPredict.grid(row=6, rowspan=7, column=4, columnspan=5, padx=XWidgetPadding, pady=YWidgetPadding)
 
@@ -558,9 +557,10 @@ def ButtonMushroomAnatomy_Pressed():
 
 ButtonMushroomAnatomy = customtkinter.CTkButton(master=tab.tab("Panduan"), text="Buka Gambar Anatomi Jamur", command=ButtonMushroomAnatomy_Pressed)
 
-TextHowTo = customtkinter.CTkTextbox(master=tab.tab("Panduan"), width=965, height=350)
+TextHowTo = customtkinter.CTkTextbox(master=tab.tab("Panduan"), width=965, height=150)
 
-TextHowTo.insert("0.0", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tincidunt tellus. Aliquam faucibus libero dapibus dui sodales, posuere pharetra ligula ultricies. Ut eget convallis mauris. Etiam vitae diam placerat, ornare nibh eu, semper elit. Donec venenatis congue elit, sed eleifend mi dignissim eu. Maecenas finibus lacus magna, sed facilisis risus elementum quis. In in ipsum ut diam vehicula luctus. Maecenas nisi lacus, efficitur at metus a, congue accumsan dui.")
+TextHowTo.insert("0.0",
+                 "Cara Penggunaan:\n1. Isi semua atribut yang ada (22 atribut) dengan cara memilih atribut yang sesuai dengan  jamur yang akan diklasifikasi.\n2. Tekan tombol 'Klasifikasi' untuk melakukan klasifikasi.\n3. Dialog window baru akan muncul dengan hasil dari klasifikasi.\n\n\nNote: Jika anda tidak mengetahui bagian-bagian anatomi dari jamur, klik tombol 'Buka Gambar Anantomi Jamur' dibawah teks ini untuk membuka gambar\nanatomi jamur yang dibuat oleh @buggbuzz.")
 TextHowTo.configure(state="disabled")
 TextHowTo.pack(padx=XWidgetPadding, pady=YWidgetPadding)
 ButtonMushroomAnatomy.pack(padx=XWidgetPadding, pady=YWidgetPadding)
@@ -572,9 +572,9 @@ def ButtonDataset_Pressed():
 
 ButtonDataset = customtkinter.CTkButton(master=tab.tab("Tentang"), text="Buka Sumber Dataset", command=ButtonDataset_Pressed)
 
-TextAbout = customtkinter.CTkTextbox(master=tab.tab("Tentang"), width=965, height=350)
+TextAbout = customtkinter.CTkTextbox(master=tab.tab("Tentang"), width=965, height=275)
 
-TextAbout.insert("0.0", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at tincidunt tellus. Aliquam faucibus libero dapibus dui sodales, posuere pharetra ligula ultricies. Ut eget convallis mauris. Etiam vitae diam placerat, ornare nibh eu, semper elit. Donec venenatis congue elit, sed eleifend mi dignissim eu. Maecenas finibus lacus magna, sed facilisis risus elementum quis. In in ipsum ut diam vehicula luctus. Maecenas nisi lacus, efficitur at metus a, congue accumsan dui.")
+TextAbout.insert("0.0", "Program ini dibuat oleh:\n1. Muhammad Bayu Nashrullah - github.com/bayunashr\n2. Rino Zakharia - github.com/rinozakharia\n\nSource code program dapat dilihat di github.com/bayunashr/mushroomsdt\n\nProgram ini menggunakan dataset 'Mushroom Classification' yang didaftarkan oleh UCI Machine Learning Repository\n\nKredit library:\nscikit-learn\nnumpy\npandas\ncategory_encoders\nmatplotlib\ntk\ncustomtkinter\npyinstaller")
 TextAbout.configure(state="disabled")
 TextAbout.pack(padx=XWidgetPadding, pady=YWidgetPadding)
 ButtonDataset.pack(padx=XWidgetPadding, pady=YWidgetPadding)

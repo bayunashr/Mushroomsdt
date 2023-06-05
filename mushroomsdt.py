@@ -1,9 +1,11 @@
 import pandas as pd
 import category_encoders as ce
 import warnings
+# import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+# from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, classification_report
 
 warnings.filterwarnings('ignore')
 
@@ -25,10 +27,25 @@ X_test = encoder.transform(X_test)
 clf_gini = DecisionTreeClassifier(criterion='gini', max_depth=3, random_state=0)
 clf_gini.fit(X_train, y_train)
 
-# y_pred_gini = clf_gini.predict(X_test)
-# print('Model accuracy score with criterion gini index: {0:0.4f}'. format(accuracy_score(y_test, y_pred_gini)))
+y_pred_gini = clf_gini.predict(X_test)
 
-# user = np.array([[1,2,2,2,1,1,2,1,2,1,2,1,1,2,2,1,2,1,1,2,3,2]])
-# dfa = pd.DataFrame(user, columns=['cap-shape', 'cap-surface', 'cap-color', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat'])
-# user_pred_gini = clf_gini.predict(dfa)
-# print(user_pred_gini)
+# accuracy = accuracy_score(y_test, y_pred_gini)
+# precision = precision_score(y_test, y_pred_gini, pos_label='p')
+# recall = recall_score(y_test, y_pred_gini, pos_label='p')
+# f1 = f1_score(y_test, y_pred_gini, pos_label='p')
+# cm = confusion_matrix(y_test, y_pred_gini)
+
+# print("Akurasi: " + str(accuracy))
+# print("Presisi: " + str(precision))
+# print("Recall: " + str(recall))
+# print("F1: " + str(f1))
+# print("CM: " + str(cm))
+# print(classification_report(y_test, y_pred_gini))
+
+# plt.figure(figsize=(10, 10))
+# tree.plot_tree(clf_gini, filled=True, feature_names=X.columns, class_names=['e', 'p'])
+# plt.savefig('tree.png')
+
+#             true pos        false neg
+# true  pos   1355            37
+# false neg   41              1248
